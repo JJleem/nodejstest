@@ -1,0 +1,30 @@
+{
+  "name": "nodejstest",
+  "version": "1.0.0",
+  "description": "Welcome to Nodejs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJleem/nodejstest.git"
+  },
+  "author": "jaejun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JJleem/nodejstest/issues"
+  },
+  "homepage": "https://github.com/JJleem/nodejstest#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/node": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-react": "^7.24.6",
+    "nodemon": "^3.1.2"
+  }
+}
