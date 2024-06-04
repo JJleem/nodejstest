@@ -2,9 +2,9 @@
   "name": "nodejstest",
   "version": "1.0.0",
   "description": "Welcome to Nodejs",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/JJleem/nodejstest#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.6",
