@@ -124,7 +124,35 @@ Server(*항상 켜져있는 꺼지지 않는 창고 혹은 편의점같은느낌
 Node.js에서 페이지 Router는 url에 접속하기 위한 일종의 포털(관문)
 
 
+1. Server 구축
+- listening
+- 페이지 라우팅
 
+2. Client 개념
+- client는 server한테 request
+
+3. 글로벌 라우터 , client 특정 request 요청 => 출력 시켜주는 요소 컨트롤러 (* 특정 경로의 페이지에 도착했을 때, 실행시킬 콜백함수)
+
+4. 사용자 || 제품 => 다양성 추구 => 무조건 동정파라미터 경로
+(*정적 파라미터 경로)
+
+
+Pug!!! > 서버로서의 역할을 하고 있는 express
+> View Engine = 
+*videoController.js => 현재 작업하고 있는 메인 루트 폴더를 인식함
+
+분명히 루트폴더 > src > views 폴더 존재!!
+그래서 , 템플릿 엔진 ,pug express 설정!!
+pug파일을 활용!! => 경로 불일치!!
+
+서버에 process.cwd()=> 현재 실제로 작업중 이라고 인식하고있는 루트폴더가 어디인지 확인!! => 현재 가장 바깥에있는 폴더를 작업을 위한 루트폴더 인식!
+
+view engine의 실제 속성을 세팅 => set( views, 경로)
+
+1) pug를 통해서 반복적으로 복.붙 해야하는 긴 html을 보다 효율적으로 줄임!!
+2) scss에서 변수 => include
+3) patials => 공통적으로 사용될 html 저장 => 필요 시, 불러옴!
+4) 상속 
 Relational Database Service
 USD 3.02
 
