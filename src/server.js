@@ -13,17 +13,22 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 
 const PORT = 4000;
+
+console.log(process.cwd());
+
 const app = express();
 const morganMiddleWare = morgan("dev");
 app.use(morganMiddleWare);
 
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
 //Making Global Router
 
 //////
 app.use("/", globalRouter);
 //////
 app.use("/users", userRouter);
-///////
+//////
 app.use("/videos", videoRouter);
 
 const handleLogin = (req, res) => {

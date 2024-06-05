@@ -1,17 +1,13 @@
 import express from "express";
+import { join, login } from "../controlers/userControler";
+import { trending, search } from "../controlers/videoControler";
 
 const globalRouter = express.Router();
 
-const handleHome = (req, res, next) => {
-  return res.send("I Love middle");
-};
-
-const handleJoin = (req, res, next) => {
-  return res.send("Here is Join!");
-};
-
-globalRouter.get("/", handleHome);
-globalRouter.get("/join", handleJoin);
+globalRouter.get("/", trending);
+globalRouter.get("/join", join);
+globalRouter.get("/login", login);
+globalRouter.get("/search", search);
 export default globalRouter;
 
 // 만약 1개의 파일에서 1개의 데이터만 출력 할 예정

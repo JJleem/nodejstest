@@ -38,3 +38,19 @@
 
 => Final !!
 
+# 유튜브 플랫폼 만들어서 관리할 서버
+
+/ => Home
+/join => Join
+/login => Login
+/search => Search
+
+/users:id => See user
+/users/logout => Log out
+/users/edit => Edit User Profile
+/users/delete => Delete User Profile
+
+/videos/:id => See video
+/videos/:id/edit => Edit video
+/videos/:id/delete => Delete video
+/videos/upload => Upload video
