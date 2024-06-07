@@ -1,8 +1,10 @@
 extends base.pug
+include mixins/video
 
-block head
-    title Home | Nodejs
 
-    
 block content 
-  h1 Home!
+    h2 Welcome here you will see the trending videos
+    each video in videos
+      +video(video)
+    else 
+      li Sorry Nothing Found.

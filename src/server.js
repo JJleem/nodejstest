@@ -19,7 +19,7 @@ console.log(process.cwd());
 const app = express();
 const morganMiddleWare = morgan("dev");
 app.use(morganMiddleWare);
-
+app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 //Making Global Router
