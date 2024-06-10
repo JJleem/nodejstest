@@ -208,6 +208,80 @@ Login 페이지
 UI작업 => 영상 / 수정 / 편집 / 삭제
 배포
 ---------------------------------------------------------
+
+*Node.js
+
+0) babel & nodemon
+- babel : node 2가지의 module (*cjs / esm) => js 데이터 모듈로서 가져오고자 할 때 방법 상이 / 화살표함수 등 => 가장 최신 js 문법으로 compiling 해주는 babel
+
+- nodemon : node monitor (*js 파일 업데이트 || 사용자 특정 url 접속) => 에러 메세지 혹은 콘솔데이터 node 명령어를 입력하지 않아도 알아서 변경되고있는 상활을 모니터링 & 출력
+
+1) Server 를 구현 목적
+
+2) Client 존재 이해
+
+3) User <-> Client(*웹브라우저) <-> Server
+
+4) Server는 어떻게 생성?
+- express : framework
+
+5) Server : Client 요청 들어야 한다
+- app.listen() : 어떤 포트를 통해서 client 가 무언가를 요청하는지 확인할수있었음// callback 함수를 통해서 client 요청 확인후 실행!!
+
+6) Page Routing : 복수의 페이지를 가지고 홈페이지 서비스를 구현 => 각각의 페이지마다 url에 client가 접속하게 되었을 때, 웹브라우저 화면 내용 출력!!
+
+> Global Routing
+20~30개 url개별적 & 독립적
+main 판단 되는 동적 파라미터를 공통 + 추가 파라미터를 입력
+
+> middleware (*컨셉 개념)
+서버라는 객체에 use() 함수를 사용
+
+> controller 
+middleware > 특정경로에 접속 > 웹 브라우저 화면 출력(*실제)
+
+> 각각의 개별 파일 export vs 해당 파일 export default 
+
+> method : get , post
+사용자가 단순히 특정 페이지에 접속했을 때, 실행: get
+사용자가 어떤 값을 입력해서 입력한 값으로 data를 수정하거나 업데이트를 하고자 할때에는 : post
+
+>get & post 를 한번에 작성할 수 있도록 해주는 route()=> get&post 메서드 함수를 체이닝 기법으로 사용할 수 있도록
+>express.urlencoded() : form 태그에서 특정 값을 입력했을 때, 그 값을 객체의 형태 구조로 찾아올 수 있도록 해주는 함수!
+
+*DB = 복수의 data를 하나의 그룹화를 시킨 후 일정한 패턴 혹은 행과 열의 기준을 가지고 분류 시켜놓은 구조!
+
+* fake DB : 데이터 베이스의 형태를 띄고있음 !!
+데이터 업그레이드 / 삭제 / 신규 생성
+CRUD 기능!! ( Create / Read / Update / Delete )
+
+Global Router > Callback > Controller > html & js
+축약 / 공통 / 변수 : pug
+- base.pug => extends 명령어 활용 
+- block => 변수 
+- partial => footer.pug (*include)
+
+DB 생성 & 관리
+
+특정 데이터를 수정!!
+
+특정 데이터를 업로드!!
+
+MongoDB => 
+구조 
+Node.js 서버 < JS를 기반 & 서버 & DB구조 > => 구조화 DB 필요하기때문에 MongoDB사용
+
+Mongoose => MongoDB와 서버사이를 컴파일링해주는 역할
+
+MongoDB 2가지!!
+
+Java : 에디터 !!
+> 백엔드 : iOS / Android  / window
+> eclips > python / 인텔리J
+
+
+
+
 Relational Database Service
 USD 3.02
 
