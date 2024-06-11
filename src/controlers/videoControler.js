@@ -1,65 +1,51 @@
-// const fakeUser = {
-//   username: "David",
-//   loggedIn: true,
+import { request } from "express";
+import Video from "../models/video";
+
+// export const home = (req, res, next) => {
+//   console.log("Start");
+//   Video.find()
+//     .then((videos) => {
+//       console.log("videos", videos);
+//       return res.render("home", { pageTitle: "Home", videos: [] });
+//     })
+//     .catch((err) => console.log("errors", err));
 // };
 
-import { request } from "express";
-
-const videos = [
-  {
-    id: 1,
-    title: "First Video",
-    createdAt: "2 minute ago",
-    views: 1,
-    comment: 2,
-    rating: 5,
-  },
-  {
-    id: 2,
-    title: "Second Video",
-    createdAt: "10 minute ago",
-    views: 4124,
-    comment: 123,
-    rating: 6,
-  },
-  {
-    id: 3,
-    title: "Third Video",
-    createdAt: "30 minute ago",
-    views: 212,
-    comment: 6,
-    rating: 4,
-  },
-];
-
-export const trending = (req, res, next) => {
-  return res.render("home", {
-    pageTitle: "Home",
-    videos,
-    // home: "Home",
-    // fakeUser: fakeUser,
-  });
+// export const home = async (req, res) => {
+//   console.log("Start");
+//   const videos = await Video.find({});
+//   console.log("Finisded");
+//   console.log(videos);
+//   return res.render("home", { pageTitle: "Home", videos });
+// };
+export const home = async (req, res) => {
+  try {
+    const videos = await Video.find({});
+    console.log(videos);
+    return res.render("home", { pageTitle: "Home", videos });
+  } catch (error) {
+    return res.render("Server-Error", { error });
+  }
 };
 
 export const watch = (req, res) => {
   const { id } = req.params;
-  const video = videos[id - 1];
+
   return res.render("watch", {
-    pageTitle: `watching ${video.title}`,
-    video,
+    pageTitle: `watching `,
   });
 };
 
 export const getEdit = (req, res) => {
   const { id } = req.params;
-  const video = videos[id - 1];
-  return res.render("edit", { pageTitle: `Editing ${video.title}`, video });
+
+  return res.render("edit", { pageTitle: `Editing ` });
 };
 
 export const postEdit = (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
-  videos[id - 1].title = title;
+
   return res.redirect(`/videos/${id}`);
 };
 
@@ -69,19 +55,27 @@ export const getUpload = (req, res) => {
   });
 };
 
-export const postUpload = (req, res) => {
-  const { title } = req.body;
-  const newVideo = {
-    id: videos.length + 1,
-    title,
-    createdAt: "just now",
-    views: 0,
-    comment: 0,
-    rating: 0,
-  };
-  videos.push(newVideo);
-  console.log(req.body);
-  return res.redirect("/");
+export const postUpload = async (req, res) => {
+  const { title, description, hashtags } = req.body;
+  try {
+    await Video.create({
+      title,
+      description,
+      // createdAt: Date.now(),
+      hashtags: hashtags.split(",").map((word) => `#${word}`),
+      meta: {
+        views: 0,
+        rating: 0,
+      },
+    });
+    return res.redirect("/");
+  } catch (err) {
+    console.log(err);
+    return res.render("upload", {
+      pageTitle: "Upload Video",
+      errorMessage: err._message,
+    });
+  }
 };
 
 export const search = (req, res) => {
