@@ -21,6 +21,7 @@ console.log(process.cwd());
 const app = express();
 const morganMiddleWare = morgan("dev");
 app.use(morganMiddleWare);
+//input 객체형태로 가져올수있게하는것 extended unlencoded
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
