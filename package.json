@@ -4,18 +4,18 @@
   "description": "Welcome to Nodejs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/Init.js"
+    "dev": "nodemon --exec babel-node src/init.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JJleem/nodejstest.git"
+    "url": "https://github.com/Divjason/nodejstest.git"
   },
-  "author": "jaejun",
+  "author": "David",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JJleem/nodejstest/issues"
+    "url": "https://github.com/Divjason/nodejstest/issues"
   },
-  "homepage": "https://github.com/JJleem/nodejstest#readme",
+  "homepage": "https://github.com/Divjason/nodejstest#readme",
   "dependencies": {
     "express": "^4.19.2",
     "mongoose": "^8.4.1",

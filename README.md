@@ -1,4 +1,4 @@
-# Rest API Plan (\*현재 우리에게 필요한 페이지?)
+# Rest API Plan (\*현재 우리에게 필요한 페이지)
 
 # Basic Router (\*Before)
 
@@ -36,9 +36,9 @@
 /videos/comments/delete => Delete Comments on a Video
 => Root Router
 
-=> Final !!
+=> Final!!
 
-# 유튜브 플랫폼 만들어서 관리할 서버
+# 유튜브 플랫폼 만들어서 관리 서버
 
 / => Home
 /join => Join

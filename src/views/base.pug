@@ -1,27 +1,20 @@
 doctype html
 html(lang="ko")
-  head
+  head 
     title #{pageTitle} | NodeJS
-    link( rel="stylesheet" href="https://unpkg.com/mvp.css" )
-  body
-      header
-        //- if fakeUser.loggedIn 
-        //-   small Hello #{fakeUser.username}
-        //- nav 
-        //-   ul 
-            //- if fakeUser.loggedIn 
-            //-   li
-            //-     a(href="/logout") logout 
-            //- else 
-            //-   li 
-            //-     a(href="/login") login
-        h1 #{pageTitle}
-        nav 
-          ul 
-            li 
-              a(href="/videos/upload") Upload Video
-            li 
-              a(href="/") Home
-      main 
-        block content
-        include partials/footer.pug
+    link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+  body 
+    header 
+      h1 #{pageTitle}
+      nav 
+        ul 
+          li 
+            a(href="/") Home
+          li 
+            a(href="/videos/upload") Upload Video
+          li 
+            a(href="/search") Search
+           
+    main
+      block content
+      include partials/footer.pug

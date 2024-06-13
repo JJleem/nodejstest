@@ -1,4 +1,4 @@
-export const join = (req, res, next) => {
+export const join = (req, res) => {
   return res.send("Join");
 };
 
@@ -11,11 +11,13 @@ export const remove = (req, res) => {
 };
 
 export const login = (req, res) => {
-  return res.send("Login here");
+  return res.send("Login");
 };
+
 export const logout = (req, res) => {
-  return res.send("Logout here");
+  return res.send("Logout");
 };
+
 export const see = (req, res) => {
-  return res.send("See id?");
+  return res.send("See user");
 };
